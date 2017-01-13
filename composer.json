@@ -1,5 +1,5 @@
 {
-  "name": "danilfromekb/yii2-pg_stat_statements",
+  "name": "danilfromekb/yii2-pg-stat-statements",
   "description": "Yii2 collect postgres pg_stat_statements logs from servers",
   "keywords": ["yii2", "pg_stat_statements", "logging"],
   "type": "yii2-extension",
@@ -7,7 +7,7 @@
   "authors": [
     {
       "name": "Danil Meshcheryakov",
-      "homepage": "https://github.com/sima-land/yii-pg_stat_statements",
+      "homepage": "https://github.com/sima-land/yii2-pg-stat-statements",
       "email": "danil.m121989@gmail.com"
     }
   ],
