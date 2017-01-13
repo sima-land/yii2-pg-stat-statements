@@ -1,0 +1,23 @@
+{
+  "name": "danilfromekb/yii2-pg_stat_statements",
+  "description": "Yii2 collect postgres pg_stat_statements logs from servers",
+  "keywords": ["yii2", "pg_stat_statements", "logging"],
+  "type": "yii2-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Danil Meshcheryakov",
+      "homepage": "https://github.com/sima-land/yii-pg_stat_statements",
+      "email": "danil.m121989@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "yiisoft/yii2": "2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Simaland\\Pgstatstatements\\": "src"
+    }
+  }
+}
