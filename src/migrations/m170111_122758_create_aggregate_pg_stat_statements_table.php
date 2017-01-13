@@ -17,7 +17,7 @@ class m170111_122758_create_aggregate_pg_stat_statements_table extends Migration
             [
                 'id' => $this->primaryKey(),
                 'created_at' => 'TIMESTAMPTZ',
-                'server' => $this->string(100)->notNull()->comment('Имя сервера, отправившего данные'),
+                'server' => $this->string(20)->notNull()->comment('Имя сервера, отправившего данные'),
                 'userid' => $this->integer(10)->notNull()->comment('OID пользователя, выполнявшего оператор'),
                 'dbid' => $this->integer(10)->notNull()->comment('OID базы данных, в которой выполнялся оператор'),
                 'queryid' => $this->bigInteger()->notNull()->comment(
