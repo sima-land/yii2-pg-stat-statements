@@ -1,19 +1,19 @@
 <?php
 
-namespace simaland\sgstatstatements\commands;
+namespace simaland\pgstatstatements\commands;
 
 use simaland\pgstatstatements\models\AggregatePgStatStatements;
 use simaland\pgstatstatements\models\PgStatStatements;
 use yii\console\Controller;
 
 /**
- * Controller for work with pg_stat_statements postgres extension
+ * Controller for aggregate and work with aggregated pg_stat_statements view
  * @package simaland\pgstatstatements\console\controllers
  */
-class PgStatStatementsController extends Controller
+class AggregatePgStatStatementsController extends Controller
 {
     /**
-     *  aggregate pg_stat_statements view to aggregate_pg_stat_statements table with info about host and operation start
+     * aggregate pg_stat_statements view to aggregate_pg_stat_statements table with info about host and operation start
      */
     public function actionAggregatePgStat()
     {
@@ -33,7 +33,7 @@ class PgStatStatementsController extends Controller
                 }
             }
 
-            \Yii::$app->db->createCommand('SELECT pg_stat_statements_reset()')->execute();
+            PgStatStatements::reset();
 
             $transaction->commit();
         } catch (\Exception $e) {
