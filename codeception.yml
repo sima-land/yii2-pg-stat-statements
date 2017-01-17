@@ -15,7 +15,7 @@ extensions:
 modules:
     config:
         Db:
-            dsn: ''
+            dsn: 'sqlite:tests/_output/sqlite_test.db'
             user: ''
             password: ''
             dump: tests/_data/dump.sql
