@@ -1,6 +1,7 @@
 language: php
 
-hostname: test-hostname
+addons:
+  hostname: short-hostname
 
 php:
   - 7.0
