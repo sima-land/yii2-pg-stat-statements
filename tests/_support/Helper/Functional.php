@@ -6,5 +6,4 @@ namespace tests\Helper;
 
 class Functional extends \Codeception\Module
 {
-
 }

@@ -6,5 +6,4 @@ namespace tests\Helper;
 
 class Acceptance extends \Codeception\Module
 {
-
 }
