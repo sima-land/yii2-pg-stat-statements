@@ -32,7 +32,7 @@ class AggregatePgStatStatementsController extends Controller
                     $aggPgStatStatement->created_at = $date;
                     $aggPgStatStatement->server = gethostname();
                     if (!$aggPgStatStatement->save()) {
-                        throw new \Exception(gethostname());
+                        throw new \yii\base\Exception(json_encode($aggPgStatStatement->errors));
                     }
                 }
             }
