@@ -16,4 +16,4 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 script:
-  - php vendor/bin/codecept run
+  - php vendor/bin/codecept run -d

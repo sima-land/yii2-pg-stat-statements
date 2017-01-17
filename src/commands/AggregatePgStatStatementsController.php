@@ -31,7 +31,9 @@ class AggregatePgStatStatementsController extends Controller
                     $aggPgStatStatement->setAttributes($pgStatStatement->getAttributes());
                     $aggPgStatStatement->created_at = $date;
                     $aggPgStatStatement->server = gethostname();
-                    $aggPgStatStatement->save();
+                    if (!$aggPgStatStatement->save()) {
+                        throw new \Exception(json_encode($aggPgStatStatement->errors));
+                    }
                 }
             }
 
