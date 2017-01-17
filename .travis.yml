@@ -1,4 +1,5 @@
 language: php
+sudo: true
 
 addons:
   hostname: short-hostname
