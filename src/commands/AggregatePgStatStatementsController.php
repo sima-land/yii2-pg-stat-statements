@@ -13,6 +13,7 @@ use yii\console\Controller;
 class AggregatePgStatStatementsController extends Controller
 {
     public $pgStatStatements = '\simaland\pgstatstatements\models\PgStatStatements';
+
     /**
      * aggregate pg_stat_statements view to aggregate_pg_stat_statements table with info about host and operation start
      */
@@ -32,7 +33,11 @@ class AggregatePgStatStatementsController extends Controller
                     $aggPgStatStatement->created_at = $date;
                     $aggPgStatStatement->server = gethostname();
                     if (!$aggPgStatStatement->save()) {
-                        throw new \yii\base\Exception(json_encode($aggPgStatStatement->errors));
+                        throw new \yii\base\Exception(
+                            'Model AggregatePgStatStatements has validation errors: ' . json_encode(
+                                $aggPgStatStatement->errors
+                            )
+                        );
                     }
                 }
             }
