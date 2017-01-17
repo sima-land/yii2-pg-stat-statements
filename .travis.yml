@@ -1,5 +1,7 @@
 language: php
 
+hostname: test-hostname
+
 php:
   - 7.0
 
@@ -16,4 +18,4 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 script:
-  - php vendor/bin/codecept run -d
+  - php vendor/bin/codecept run
