@@ -12,12 +12,14 @@ use yii\console\Controller;
  */
 class AggregatePgStatStatementsController extends Controller
 {
+    public $pgStatStatements = '\simaland\pgstatstatements\models\PgStatStatements';
     /**
      * aggregate pg_stat_statements view to aggregate_pg_stat_statements table with info about host and operation start
      */
     public function actionAggregatePgStat()
     {
-        $query = PgStatStatements::find();
+        $pgStatStatementsClass = $this->pgStatStatements;
+        $query = $pgStatStatementsClass::find();
         $date = date('c');
 
         $transaction = \Yii::$app->db->beginTransaction();
@@ -33,7 +35,7 @@ class AggregatePgStatStatementsController extends Controller
                 }
             }
 
-            PgStatStatements::reset();
+            $pgStatStatementsClass::reset();
 
             $transaction->commit();
         } catch (\Exception $e) {
