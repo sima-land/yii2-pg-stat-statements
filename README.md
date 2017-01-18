@@ -16,6 +16,12 @@ Via Composer
 $ composer require sima-land/yii2-pg-stat-statements
 ```
 
+## Testing
+
+```bash
+$ composer test
+```
+
 ## Security
 
 If you discover any security related issues, please email kirill@pastukhov.su instead of using the issue tracker.
