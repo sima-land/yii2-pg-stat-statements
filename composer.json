@@ -25,5 +25,8 @@
     "psr-4": {
       "simaland\\pgstatstatements\\": "src"
     }
+  },
+  "scripts": {
+    "test": "./vendor/bin/codecept run"
   }
 }
