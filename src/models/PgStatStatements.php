@@ -35,6 +35,11 @@ use Yii;
  */
 class PgStatStatements extends \yii\db\ActiveRecord
 {
+    public static function find()
+    {
+        return parent::find()->where(['not', ['queryid' => null, 'query' => '<insufficient privilege>']]);
+    }
+
     /**
      * @inheritdoc
      */
