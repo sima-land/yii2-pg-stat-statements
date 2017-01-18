@@ -34,8 +34,8 @@ class AggregatePgStatStatementsController extends Controller
                     $aggPgStatStatement->server = gethostname();
                     if (!$aggPgStatStatement->save()) {
                         throw new \yii\base\Exception(
-                            'Model AggregatePgStatStatements has validation errors: ' . json_encode(
-                                $aggPgStatStatement->errors
+                            'Model AggregatePgStatStatements has validation errors: ' . var_export(
+                                $aggPgStatStatement->errors, true
                             )
                         );
                     }
