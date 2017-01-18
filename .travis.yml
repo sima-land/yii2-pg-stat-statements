@@ -1,0 +1,23 @@
+language: php
+sudo: true
+
+addons:
+  hostname: short-hostname
+
+php:
+  - 7.0
+
+matrix:
+  fast_finish: true
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+
+install:
+  - travis_retry composer self-update
+  - travis_retry composer install --prefer-dist --no-interaction
+
+script:
+  - php vendor/bin/codecept run

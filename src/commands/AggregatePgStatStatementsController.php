@@ -12,12 +12,15 @@ use yii\console\Controller;
  */
 class AggregatePgStatStatementsController extends Controller
 {
+    public $pgStatStatements = '\simaland\pgstatstatements\models\PgStatStatements';
+
     /**
      * aggregate pg_stat_statements view to aggregate_pg_stat_statements table with info about host and operation start
      */
     public function actionAggregatePgStat()
     {
-        $query = PgStatStatements::find();
+        $pgStatStatementsClass = $this->pgStatStatements;
+        $query = $pgStatStatementsClass::find();
         $date = date('c');
 
         $transaction = \Yii::$app->db->beginTransaction();
@@ -29,11 +32,17 @@ class AggregatePgStatStatementsController extends Controller
                     $aggPgStatStatement->setAttributes($pgStatStatement->getAttributes());
                     $aggPgStatStatement->created_at = $date;
                     $aggPgStatStatement->server = gethostname();
-                    $aggPgStatStatement->save();
+                    if (!$aggPgStatStatement->save()) {
+                        throw new \yii\base\Exception(
+                            'Model AggregatePgStatStatements has validation errors: ' . json_encode(
+                                $aggPgStatStatement->errors
+                            )
+                        );
+                    }
                 }
             }
 
-            PgStatStatements::reset();
+            $pgStatStatementsClass::reset();
 
             $transaction->commit();
         } catch (\Exception $e) {
