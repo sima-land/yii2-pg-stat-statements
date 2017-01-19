@@ -11,7 +11,7 @@ class AggregatePgStatStatementsControllerTest extends \Codeception\TestCase\Test
     public function testGetData()
     {
         $this->assertEquals(PgStatStatements::find()->count(), 3);
-        $this->assertEquals(AggregatePgStatStatements::find()->count(), 0);
+        $this->assertEquals(AggregatePgStatStatements::find()->count(), 3);
 
         $controller = new AggregatePgStatStatementsController('aggregatePgStatStatementsController', \Yii::$app);
 
@@ -19,6 +19,6 @@ class AggregatePgStatStatementsControllerTest extends \Codeception\TestCase\Test
         $controller->runAction('aggregate-pg-stat');
 
         $this->assertEquals(PgStatStatements::find()->count(), 0);
-        $this->assertEquals(AggregatePgStatStatements::find()->count(), 3);
+        $this->assertEquals(AggregatePgStatStatements::find()->count(), 6);
     }
 }
