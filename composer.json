@@ -1,5 +1,5 @@
 {
-  "name": "danilfromekb/yii2-pg-stat-statements",
+  "name": "sima-land/yii2-pg-stat-statements",
   "description": "Yii2 collect postgres pg_stat_statements logs from servers",
   "keywords": ["yii2", "pg_stat_statements", "logging"],
   "type": "yii2-extension",
