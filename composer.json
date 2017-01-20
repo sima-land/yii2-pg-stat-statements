@@ -23,7 +23,12 @@
   },
   "autoload": {
     "psr-4": {
-      "simaland\\pgstatstatements\\": "src"
+      "simaland\\pgstatstatements\\": "src",
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "tests": "tests"
     }
   },
   "extra": {
