@@ -26,6 +26,17 @@
       "simaland\\pgstatstatements\\": "src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests"
+    }
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  },
   "scripts": {
     "test": "./vendor/bin/codecept run"
   }

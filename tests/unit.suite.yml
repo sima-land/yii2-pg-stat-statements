@@ -11,4 +11,5 @@ modules:
         - Db
     config:
         Yii2:
+            cleanup: true
             configFile: 'tests/_config/unit.php'
