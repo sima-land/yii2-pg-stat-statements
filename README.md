@@ -24,7 +24,7 @@ $ composer test
 
 ## Security
 
-If you discover any security related issues, please email kirill@pastukhov.su instead of using the issue tracker.
+If you discover any security related issues, please email pastukhov_k@sima-land.ru instead of using the issue tracker.
 
 ## Credits
 
