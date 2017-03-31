@@ -37,23 +37,17 @@ class AggregatePgStatStatementsSearch extends AggregatePgStatStatements
                     'temp_blks_read',
                     'temp_blks_written'
                 ],
-                'integer'
+                'integer',
+                'min' => 0,
+                'max' => 2147483647, //max integer for postgres
             ],
-            [['created_at', 'server', 'query'], 'safe'],
+            ['created_at', 'date'],
+            [['created_at', 'server', 'query'], 'string'],
             [
                 ['total_time', 'min_time', 'max_time', 'mean_time', 'stddev_time', 'blk_read_time', 'blk_write_time'],
                 'number'
             ],
         ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function scenarios()
-    {
-        // bypass scenarios() implementation in the parent class
-        return Model::scenarios();
     }
 
     /**

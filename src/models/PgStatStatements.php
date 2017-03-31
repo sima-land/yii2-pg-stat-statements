@@ -37,19 +37,10 @@ class PgStatStatements extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
-     * @return $this
      */
     public static function find()
     {
         return parent::find()->where(['not', ['queryid' => null, 'query' => '<insufficient privilege>']]);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'pg_stat_statements';
     }
 
     /**
