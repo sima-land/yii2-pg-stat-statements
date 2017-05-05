@@ -18,7 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'query:ntext',
@@ -49,3 +48,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 </div>
+
+<script type="text/javascript"><?= readfile(__DIR__ . '/app.js'); ?></script>
+<style type="text/css"><?= readfile(__DIR__ . '/app.css'); ?></style>
