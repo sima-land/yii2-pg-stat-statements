@@ -50,4 +50,4 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 <script type="text/javascript"><?= readfile(__DIR__ . '/app.js'); ?></script>
-<style type="text/css"><?= readfile(__DIR__ . '/app.css'); ?></script>
+<style type="text/css"><?= readfile(__DIR__ . '/app.css'); ?></style>
