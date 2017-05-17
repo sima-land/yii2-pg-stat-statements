@@ -1,4 +1,4 @@
-$(document).ready(function () {
+window.onload = function(){
     // Get descriptions and optimal size of table columns
     var theads = document.querySelectorAll('table thead th'),
         info = [],
@@ -44,9 +44,9 @@ $(document).ready(function () {
     }
 
     //  Trim 3rd column (SQL query) to 2 lines
-    if ($('tbody tr td:nth-child(2)').text().length > 36) {
+    if ($('tbody tr td:nth-child(2)').text().length > 100) {
         $('tbody tr td:nth-child(2)').html(function () {
-            return '<div class="reducer">' + $(this).text() + '</div>'
+            return '<div class="reducer">' + $(this).text() + '</div>';
         });
     }
 
@@ -71,4 +71,5 @@ $(document).ready(function () {
 
     //      Tooltip
     $('[data-toggle="tooltip"]').tooltip()
-});
+}
+
