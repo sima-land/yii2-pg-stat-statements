@@ -1,13 +1,13 @@
-.container {
+.wrap > .container {
     width: 100%;
 }
 
-.aggregate-pg-stat-statements-index table {
+table {
     font-family: monospace;
     font-size: 12px;
 }
 
-.aggregate-pg-stat-statements-index table tr.affix {
+table tr.affix {
     top: 50px;
     right: 15px;
     left: 15px;
@@ -15,18 +15,18 @@
     z-index: 5;
 }
 
-.aggregate-pg-stat-statements-index table tr.affix th {
+table tr.affix th {
     max-width: unset;
     display: inline-block;
     border-right: none;
 }
 
-.aggregate-pg-stat-statements-index table th a {
+table th a {
     display: block !important;
     overflow: hidden;
 }
 
-.aggregate-pg-stat-statements-index table tr th a:after {
+table tr th a:after {
     position: absolute;
     right: 0;
     top: 6px;
@@ -34,40 +34,40 @@
     padding: 3px;
 }
 
-.aggregate-pg-stat-statements-index table tr.affix th:last-child {
+table tr.affix th:last-child {
     border-right: solid 1px #aaa;
 }
 
-.aggregate-pg-stat-statements-index table th {
+table th {
     max-width: 29px;
     position: relative;
 }
 
-.aggregate-pg-stat-statements-index table .danger {
+table .danger {
     background: #ff4824;
 }
 
-.aggregate-pg-stat-statements-index table .filters td {
-    padding: 0;
+table .filters td {
+    padding: 0 !important;
 }
 
-.aggregate-pg-stat-statements-index table .filters input {
+table .filters input {
     border-radius: 0;
     padding: 2px !important;
 }
 
-.aggregate-pg-stat-statements-index table tbody td {
+table tbody td {
     overflow: hidden;
 }
 
-.aggregate-pg-stat-statements-index .reducer {
+.reducer {
     max-height: 72px;
     overflow: hidden;
     position: relative;
     z-index: 1;
 }
 
-.aggregate-pg-stat-statements-index .reducer:after {
+.reducer:after {
     content: '...';
     width: 100%;
     color: #000;
@@ -76,12 +76,14 @@
     position: absolute;
     bottom: 0;
     text-align: center;
+    cursor: pointer;
 }
 
-.aggregate-pg-stat-statements-index td.extend .reducer {
+td.extend .reducer {
     max-height: 99999999px !important;
 }
 
-.aggregate-pg-stat-statements-index td.extend .reducer:after {
+td.extend .reducer:after {
     display: none;
 }
+
