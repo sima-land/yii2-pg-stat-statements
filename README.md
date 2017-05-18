@@ -2,6 +2,8 @@
 Yii2 component for tracking execution statistics and aggregation of all SQL 
 statements executed by multiple servers.
 
+![Cover](doc/image/yii2-pg-stat-statements.png)
+
 ## Features
 
 * Multiple servers
